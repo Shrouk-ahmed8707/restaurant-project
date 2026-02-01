@@ -55,7 +55,7 @@
     cursor: pointer;
   }
 
-  .card1:hover .img,
+  /* .card1:hover .img,
   .card3:hover .img {
     transform: skewX(-10deg) scale(1.8) !important;
      cursor: pointer;
@@ -65,7 +65,37 @@
   .card4:hover .img {
     transform: skewX(10deg) scale(1.8) !important;
      cursor: pointer;
-  }
+  } */
+
+  /* التصميم الطبيعي للموبايل (بدون ميل) */
+.skew-container {
+    transform: none !important;
+    overflow: hidden;
+}
+
+.skew-container img {
+    transform: scale(1.1) !important; /* زوم خفيف بس */
+    height: 250px !important; /* طول مناسب للموبايل */
+    width: 100%;
+    object-fit: cover;
+}
+
+/* الشاشات الكبيرة (الكمبيوتر) */
+@media (min-width: 768px) {
+    .card-right .skew-container {
+        transform: skewX(10deg) translateX(30px) !important;
+    }
+    .card-right .skew-container img {
+        transform: skewX(-10deg) scale(1.5) !important;
+    }
+
+    .card-left .skew-container {
+        transform: skewX(-10deg) translateX(-30px) !important;
+    }
+    .card-left .skew-container img {
+        transform: skewX(10deg) scale(1.5) !important;
+    }
+}
 
 .before-card {
   position: relative;
@@ -653,7 +683,7 @@
 
   <h2 class="text-center mt-5 text-secondary">Restuarant news</h2>
 
-  <div class="card card3 m-auto overflow-hidden shadow-lg border-0 mt-5" style="width: 80%; border-radius: 15px;">
+  <!-- <div class="card card3 m-auto overflow-hidden shadow-lg border-0 mt-5" style="width: 80%; border-radius: 15px;">
     <div class="row g-0">
 
       <div class="col-md-8">
@@ -677,7 +707,7 @@
 
       <div class="col-md-4 " style="transform: skewX(10deg) translateX(30px); overflow: hidden;">
         <img src="images/pexels-nickcollins-1274670.jpg" class="img-fluid pe-4 img" alt="..."
-          style="transform: skewX(-10deg) scale(1.5); height: 100%; object-fit: cover;">
+          style=" height: 100%; object-fit: cover;">
       </div>
 
 
@@ -691,7 +721,7 @@
 
       <div class="col-md-4  " style="transform: skewX(-10deg) translateX(-30px); overflow: hidden;">
         <img src="images/pexels-robinstickel-70497.jpg" class="img-fluid pe-4 img" alt="..."
-          style="transform: skewX(10deg) scale(1.5); height: 100%; object-fit: cover;">
+          style=" height: 100%; object-fit: cover;">
       </div>
 
       <div class="col-md-8">
@@ -745,7 +775,7 @@
 
       <div class="col-md-4  " style="transform: skewX(10deg) translateX(30px); overflow: hidden;">
         <img src="images/pexels-robinstickel-70497.jpg" class="img-fluid pe-4 img" alt="..."
-          style="transform: skewX(-10deg) scale(1.5); height: 100%; object-fit: cover;">
+          style=" height: 100%; object-fit: cover;">
       </div>
     </div>
   </div>
@@ -756,7 +786,7 @@
 
       <div class="col-md-4  " style="transform: skewX(-10deg) translateX(-30px); overflow: hidden;">
         <img src="images/pexels-robinstickel-70497.jpg" class="img-fluid pe-4 img" alt="..."
-          style="transform: skewX(10deg) scale(1.5); height: 100%; object-fit: cover;">
+          style=" height: 100%; object-fit: cover;">
       </div>
 
       <div class="col-md-8">
@@ -780,8 +810,94 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
+<div class="card podcast-card card3 card-right overflow-hidden shadow-lg border-0 w-75 m-auto mt-5">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body p-4">
+        <h2 class="card-title text-warning" style="font-style: italic; font-weight: bold;">Podcast Title</h2>
+        <p class="text-muted"><small>Mon. May 25th 2020</small></p>
+        <hr class="border-warning border-2 opacity-100 w-25">
+        <p class="card-text mt-4">In Our Kitchen, Passion Doesn't Stop At Taste Alone...</p>
+        <div class="mt-4">
+          <button class="btn btn-warning text-white btn-sm px-3">Podcast</button>
+          <button class="btn btn-warning text-white btn-sm px-3 mx-2">43 mins</button>
+          <button class="btn btn-warning text-white btn-sm px-3">Play Episode</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 skew-container">
+      <img src="images/pexels-nickcollins-1274670.jpg" class="img-fluid img" alt="...">
+    </div>
+  </div>
+</div>
+
+<div class="card podcast-card card2 card-left overflow-hidden shadow-lg border-0 w-75 m-auto mt-5">
+  <div class="row g-0">
+    <div class="col-md-4 skew-container">
+      <img src="images/pexels-robinstickel-70497.jpg" class="img-fluid img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body p-4">
+        <h2 class="card-title text-warning" style="font-style: italic; font-weight: bold;">Podcast Title</h2>
+        <p class="text-muted"><small>Mon. May 25th 2020</small></p>
+        <hr class="border-warning border-2 opacity-100 w-25">
+        <p class="card-text mt-4">In Our Kitchen, Passion Doesn't Stop At Taste Alone...</p>
+        <div class="mt-4">
+          <button class="btn btn-warning text-white btn-sm px-3">Podcast</button>
+          <button class="btn btn-warning text-white btn-sm px-3 mx-2">43 mins</button>
+          <button class="btn btn-warning text-white btn-sm px-3">Play Episode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card podcast-card card3 card-right overflow-hidden shadow-lg border-0 w-75 m-auto mt-5">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body p-4">
+        <h2 class="card-title text-warning" style="font-style: italic; font-weight: bold;">Podcast Title</h2>
+        <p class="text-muted"><small>Mon. May 25th 2020</small></p>
+        <hr class="border-warning border-2 opacity-100 w-25">
+        <p class="card-text mt-4">In Our Kitchen, Passion Doesn't Stop At Taste Alone...</p>
+        <div class="mt-4">
+          <button class="btn btn-warning text-white btn-sm px-3">Podcast</button>
+          <button class="btn btn-warning text-white btn-sm px-3 mx-2">43 mins</button>
+          <button class="btn btn-warning text-white btn-sm px-3">Play Episode</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 skew-container">
+      <img src="images/pexels-nickcollins-1274670.jpg" class="img-fluid img" alt="...">
+    </div>
+  </div>
+</div>
+
+
+<div class="card podcast-card card2 card-left overflow-hidden shadow-lg border-0 w-75 m-auto mt-5">
+  <div class="row g-0">
+    <div class="col-md-4 skew-container">
+      <img src="images/pexels-robinstickel-70497.jpg" class="img-fluid img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body p-4">
+        <h2 class="card-title text-warning" style="font-style: italic; font-weight: bold;">Podcast Title</h2>
+        <p class="text-muted"><small>Mon. May 25th 2020</small></p>
+        <hr class="border-warning border-2 opacity-100 w-25">
+        <p class="card-text mt-4">In Our Kitchen, Passion Doesn't Stop At Taste Alone...</p>
+        <div class="mt-4">
+          <button class="btn btn-warning text-white btn-sm px-3">Podcast</button>
+          <button class="btn btn-warning text-white btn-sm px-3 mx-2">43 mins</button>
+          <button class="btn btn-warning text-white btn-sm px-3">Play Episode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ////////////////////////// -->
   <div class="container w-75" style="margin-top: 100px;">
             <div class="row justify-content-center">
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center subscribe-card">
